@@ -8,7 +8,7 @@ defmodule ReispayWeb.Router do
   scope "/api", ReispayWeb do
     pipe_through :api
 
-    get "/", WelcomeController, :index
+    get "/:filename", WelcomeController, :index
   end
 
   # Enables LiveDashboard only for development
