@@ -18,7 +18,10 @@ config :reispay, ReispayWeb.Endpoint,
   pubsub_server: Reispay.PubSub,
   live_view: [signing_salt: "OuVSvDts"]
 
-# Configures Elixir's Logger
+  config :reispay, Reispay.Repo,
+    migration_primary_key: [type: :binary_id],
+    migration_foreign_key: [type: :binary_id]
+
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
